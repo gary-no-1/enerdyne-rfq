@@ -10,7 +10,7 @@ class PurchasOrderLine(models.Model):
 
     _inherit = 'purchase.order.line'
 
-    tender = fields.Char(related='order_id.origin')
-    order_no = fields.Char(related='order_id.name')
-    order_date = field.Date(related='order_id.date_order',default=lambda s: fields.Date.context_today(s))
+    tender = fields.Char('Tender #',related='order_id.origin')
+    order_no = fields.Char('P.O.#',related='order_id.name')
+    order_date = fields.Datetime(related='order_id.date_order')
 
