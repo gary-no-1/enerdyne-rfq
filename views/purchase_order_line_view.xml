@@ -18,4 +18,17 @@
         </field>
     </record>
 
+    <record id="item_requisition_search_view" model="ir.ui.view">
+        <field name="name">Item Requistion Search View</field>
+        <field name="model">purchase.order.line</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="tender"/>
+                <group string="Group By">
+                    <filter name="group_by_tender" string="Tender" context="{'group_by':'tender'}">
+                </group>
+            </search>
+        </field>
+    </record>
+
 </odoo>
