@@ -39,6 +39,8 @@
             <pivot string="Item Requisition">
                 <field name="product_id" type="row" />
                 <field name="partner_id" type="col" />
+                <field name="product_qty" type="measure" />                 
+                <field name="price_unit" type="measure" />                 
             </pivot>
         </field>
     </record>
