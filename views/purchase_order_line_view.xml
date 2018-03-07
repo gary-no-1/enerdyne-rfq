@@ -3,7 +3,7 @@
 
     <record id="item_requisition_tree_view" model="ir.ui.view">
         <field name="name">Item Requistion Tree Views</field>
-        <field name="model">purchase.requisition.line</field>
+        <field name="model">purchase.order.line</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="product_id"/>

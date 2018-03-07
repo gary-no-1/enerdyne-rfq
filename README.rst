@@ -1,4 +1,4 @@
-Tasks Week / Month v10
+Purchase Requisition Item Rates Report
 ==============
 
 This module is for reporting on purchase rfq item rates

@@ -5,7 +5,7 @@
 from odoo import fields, models, api
 from datetime import datetime, time
 
-class PurchaseRequisitionLine(models.Model):
-    """Inherit purchase requistion line."""
+class PurchasOrderLine(models.Model):
+    """Inherit purchase order line."""
 
-    _inherit = 'purchase.requisition.line'
+    _inherit = 'purchase.order.line'
