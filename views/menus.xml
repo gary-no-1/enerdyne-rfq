@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 
-    <act_window id="action_requisition_report" name="Requisitions Report" res_model="purchase.order.line" view_type="form" view_mode="tree"/>
+    <act_window id="action_requisition_report" name="Requisitions Report" res_model="purchase.order.line" view_type="form" view_mode="tree,pivot"/>
     <menuitem id="requisitions_report_menu" name="Requisitions Report" parent="purchase.menu_procurement_management" sequence="50" action="action_requisition_report"/>
 
 </odoo>

@@ -18,18 +18,29 @@
         </field>
     </record>
 
-  <data>
+    <data>
     <!--Inherit purchase order line search view-->
-    <record id="item_requisition_search_view" model="ir.ui.view">
-      <field name="name">Item Requistion Search View</field>
-      <field name="model">purchase.order.line</field>
-      <field name="inherit_id" ref="purchase.purchase_order_line_search"/>
-      <field name="arch" type="xml">
-          <xpath expr="//search" position="inside">
-              <field name="tender"/>
-          </xpath>
-      </field>
+        <record id="item_requisition_search_view" model="ir.ui.view">
+            <field name="name">Item Requistion Search View</field>
+            <field name="model">purchase.order.line</field>
+            <field name="inherit_id" ref="purchase.purchase_order_line_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    <field name="tender"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+
+    <record model="ir.ui.view" id="item_requisition_pivot">
+        <field name="name">Item Requistion Pivot Views</field>
+        <field name="model">purchase.order.line</field>
+        <field name="arch" type="xml">
+            <pivot string="Item Requisition">
+                <field name="product_id" type="row" />
+                <field name="partner_id" type="col" />
+            </pivot>
+        </field>
     </record>
-  </data>
 
 </odoo>
