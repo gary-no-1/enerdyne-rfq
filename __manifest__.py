@@ -6,8 +6,8 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-    'name': 'Project Task Week Month',
-    'summary': 'Adds field week , month to project task',
+    'name': 'Purchase Requisitions Report ',
+    'summary': 'Reporting on Item / Vendor for Purchase Requisitions ',
     'author': 'Ravi Krishnan',
     'website': 'http://ravi73164.tumblr.com',
     'category': 'Purchase',
