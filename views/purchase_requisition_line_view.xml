@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="item_requisition_tree_view" model="ir.ui.view">
+        <field name="name">Item Requistion Tree Views</field>
+        <field name="model">purchase.requisition.line</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="product_id"/>
+                <field name="product_qty"/>
+                <field name="price_unit"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

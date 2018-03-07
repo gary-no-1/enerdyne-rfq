@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <act_window id="action_requisition_report" name="Requisitions Report" res_model="purchase.requisition.line" view_type="form" view_mode="tree"/>
+    <menuitem id="requisitions_report_menu" name="Requisitions Report" parent="purchase" sequence="50" action="action_requisition_report"/>
+
+</odoo>
