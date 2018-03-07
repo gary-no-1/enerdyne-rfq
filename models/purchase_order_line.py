@@ -9,3 +9,8 @@ class PurchasOrderLine(models.Model):
     """Inherit purchase order line."""
 
     _inherit = 'purchase.order.line'
+
+    tender = fields.Char(related='order_id.origin')
+    order_no = fields.Char(related='order_id.name')
+    order_date = field.Date(related='order_id.date_order',default=lambda s: fields.Date.context_today(s))
+
