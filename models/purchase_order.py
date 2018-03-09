@@ -10,5 +10,5 @@ class PurchasOrder(models.Model):
 
     _inherit = 'purchase.order'
 
-    partner_ref_date = fields.Date('Supplier Refernce Date')
+    partner_ref_date = fields.Date(string="Supplier Reference Date")
 

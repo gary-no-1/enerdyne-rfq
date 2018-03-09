@@ -14,4 +14,4 @@ class PurchasOrderLine(models.Model):
     order_no = fields.Char('P.O.#',related='order_id.name')
     order_date = fields.Datetime(related='order_id.date_order')
     partner_ref = fields.Char('Supplier Ref',related='order_id.partner_ref')
-    partner_ref_date = field.Date('Supplier Ref Date',related='order_id.partner_ref_date')
+    partner_ref_date = fields.Date('Supplier Ref Date',related='order_id.partner_ref_date')
