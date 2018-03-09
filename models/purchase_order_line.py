@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# © 2017 Elico Corp (https://www.elico-corp.com).
+# © 2018 Ravi Krishnan (ravi73164@gmail.com)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import fields, models, api
@@ -10,7 +10,8 @@ class PurchasOrderLine(models.Model):
 
     _inherit = 'purchase.order.line'
 
-    tender = fields.Char('Tender #',related='order_id.origin')
+    tender = fields.Char('Purc. Agreement #',related='order_id.origin')
     order_no = fields.Char('P.O.#',related='order_id.name')
     order_date = fields.Datetime(related='order_id.date_order')
-
+    partner_ref = fields.Char('Supplier Ref',related='order_id.partner_ref')
+    partner_ref_date = field.Date('Supplier Ref Date',related='order_id.partner_ref_date')

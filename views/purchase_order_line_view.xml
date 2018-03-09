@@ -6,10 +6,11 @@
         <field name="model">purchase.order.line</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="partner_id"/>
+                <field name="partner_id" string="Supplier"/>
                 <field name="order_no"/>
                 <field name="tender"/>
-                <field name="order_date"/>
+                <field name="partner_ref"/>
+                <field name="partner_ref_date"/>
                 <field name="product_id"/>
                 <field name="product_qty"/>
                 <field name="price_unit"/>
