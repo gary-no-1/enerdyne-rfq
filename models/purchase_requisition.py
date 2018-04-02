@@ -12,7 +12,7 @@ class PurchasRequisition(models.Model):
 
     opportunity_id = fields.Many2one(
         'crm.lead',
-        'Opportinity Number'
+        'Opportunity Number'
     )
 
     sale_order_id = fields.Many2one(
