@@ -20,6 +20,7 @@
         'views/menus.xml',
         'views/purchase_order_view.xml',
         'views/purchase_order_line_view.xml',
+        'views/purchase_requisition_view.xml',
     ],
     'installable': True,
 }

@@ -15,3 +15,5 @@ class PurchasOrderLine(models.Model):
     order_date = fields.Datetime(related='order_id.date_order')
     partner_ref = fields.Char('Supplier Ref',related='order_id.partner_ref')
     partner_ref_date = fields.Date('Supplier Ref Date',related='order_id.partner_ref_date')
+
+    landed_price = field.Float('Landed Price')
