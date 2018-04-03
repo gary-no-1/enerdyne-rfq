@@ -12,3 +12,14 @@ class PurchasOrder(models.Model):
 
     partner_ref_date = fields.Date(string="Supplier Reference Date")
 
+    opportunity_id = fields.Many2one(
+        'crm.lead',
+        'Opportunity #'
+    )
+
+    sale_order_id = fields.Many2one(
+        'sale.order',
+        'Quotation / Sale Order'
+    )
+
+

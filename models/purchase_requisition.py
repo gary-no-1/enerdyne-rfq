@@ -12,12 +12,12 @@ class PurchasRequisition(models.Model):
 
     opportunity_id = fields.Many2one(
         'crm.lead',
-        'Opportunity Number'
+        'Opportunity #'
     )
 
     sale_order_id = fields.Many2one(
         'sale.order',
-        'Sale Order'
+        'Quotation / Sale Order'
     )
 
     partner_ref_date = fields.Date(string="Supplier Reference Date")
