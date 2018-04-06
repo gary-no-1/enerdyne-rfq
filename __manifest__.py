@@ -1,7 +1,4 @@
 # -*- coding: utf-8 -*-
-# (c) 2015 Incaser Informatica S.L. - Sergio Teruel
-# (c) 2015 Incaser Informatica S.L. - Carlos Dauden
-# Copyright 2016 Onestein (<http://www.onestein.eu>)
 # Copyright 2018 Ravi Krishnan (<http://ravi73164.tumblr.com>)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
@@ -16,6 +13,7 @@
     'depends': [
         'purchase',
         'stock',
+        'sale',
     ],
     'data': [
         'views/menus.xml',
