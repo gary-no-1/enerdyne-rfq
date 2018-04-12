@@ -21,6 +21,7 @@
         'views/purchase_order_line_view.xml',
         'views/purchase_requisition_view.xml',
         'views/product_template_view.xml',
+        'views/sale_order_view.xml',
     ],
     'installable': True,
 }
