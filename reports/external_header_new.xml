@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<t t-name="report.external_layout_header">
+	<div class="header">
+
+		<div class="row" style="background-color:#3964C3 !important;">
+			<div class="col-xs-4">
+				<img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 85px;" />
+			</div>
+			<div class="col-xs-8 text-right" style="font:25px lucida-console,sans-serif !important; ">
+				<span style="color:#fff !important;" t-field="company.partner_id" />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 text-right" style="font:15px lucida-console,sans-serif !important; background-color:#3964C3 !important;">
+				<span style="color:#fff !important;" t-field="company.partner_id.street" />
+				<br/>
+				<t t-if="company.partner_id.street2">
+					<span style="color:#fff !important;" t-field="company.partner_id.street2" />
+					<br/>
+				</t>
+				<span style="color:#fff !important;" t-field="company.partner_id.city" />
+				<br/>
+				<span style="color:#fff !important;" t-field="company.partner_id.state_id" />.
+				<span style="color:#fff !important;" t-field="company.partner_id.zip" />
+				<br/>
+				<span style="color:#fff !important;" t-field="company.partner_id.country_id" />
+				<br/>
+				<span style="color:#fff !important;" t-field="company.partner_id.email" />
+				<br/>
+				<span style="color:#fff !important;" t-field="company.partner_id.phone" />
+				<br/>
+				<span style="color:#fff !important;" t-field="company.partner_id.vat" />
+				<br/>
+			</div>
+		</div>
+	</div>
+</t>
+
