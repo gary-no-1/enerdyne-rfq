@@ -25,7 +25,7 @@
                 </t>
                 <span style="color:#fff !important;" t-field="company.partner_id.city" />
                 <br/>
-                <span style="color:#fff !important;" t-field="company.partner_id.state_id" />. 				                                                                                                                                                                                                                
+                <span style="color:#fff !important;" t-field="company.partner_id.state_id" />. 				                                                                                                                                                                                                                                
                 <span style="color:#fff !important;" t-field="company.partner_id.zip" />
                 <br/>
                 <span style="color:#fff !important;" t-field="company.partner_id.country_id" />
@@ -76,7 +76,7 @@
                                 </t>
                             </div>
                             <t t-if="doc.partner_id.company_type == 'person'">
-                                <strong>Kind Attn:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                                <strong>Kind Attn:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
                                     <span t-field="doc.partner_id.name"/>
                                 </strong>
                             </t>
@@ -128,7 +128,7 @@
                     <t t-foreach="page" t-as="layout_category">
                         <t t-if="layout_category_size &gt; 1 or page_size &gt; 1" groups="sale.group_sale_layout">
                             <tr class="active">
-                                <td colspan="7" style="font-weight: bold; border-bottom: 1px solid black;">&amp;bull;									                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+                                <td colspan="7" style="font-weight: bold; border-bottom: 1px solid black;">&amp;bull;									                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
                                     <t t-esc="layout_category['name']"/>
                                 </td>
                             </tr>
