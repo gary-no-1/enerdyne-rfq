@@ -5,11 +5,12 @@
         <div class="page">
             <div class="oe_structure"/>
             <br/>
-            <h2>
-                <span t-if="doc.state not in ['draft','sent']">Order</span>
-                <span t-if="doc.state in ['draft','sent']">Quotation</span>
-            </h2>
-            <br/>
+            <div class="row" style="margin-top:10px">
+                <h2 >
+                    <span t-if="doc.state not in ['draft','sent']">Order</span>
+                    <span t-if="doc.state in ['draft','sent']">Quotation</span>
+                </h2>
+            </div>
             <div class="row">
                 <table class="table table-condensed table table-striped" style=" table-layout:fixed;">
                     <thead style=" background-color: #3964C3;">
@@ -42,7 +43,7 @@
                                     </t>
                                 </div>
                                 <t t-if="doc.partner_id.company_type == 'person'">
-                                    <strong>Kind Attn:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     										
+                                    <strong>Kind Attn:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     										                                        
                                         <span t-field="doc.partner_id.name"/>
                                     </strong>
                                 </t>
@@ -94,7 +95,7 @@
                         <t t-foreach="page" t-as="layout_category">
                             <t t-if="layout_category_size &gt; 1 or page_size &gt; 1" groups="sale.group_sale_layout">
                                 <tr class="active">
-                                    <td colspan="7" style="font-weight: bold; border-bottom: 1px solid black;">&amp;bull;									                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        										
+                                    <td colspan="7" style="font-weight: bold; border-bottom: 1px solid black;">&amp;bull;									                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        										                                        
                                         <t t-esc="layout_category['name']"/>
                                     </td>
                                 </tr>
