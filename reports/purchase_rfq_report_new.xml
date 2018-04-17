@@ -4,46 +4,87 @@
         <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
         <div class="page">
             <div class="oe_structure"/>
-            <div class="row mt32 mb32">
-                <div class="col-xs-6">
-                    <strong>Shipping address:</strong>
-                    <div t-if="o.dest_address_id">
-                        <div t-field="o.dest_address_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;phone&quot;, &quot;fax&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/></div>
-                    <div t-if="not o.dest_address_id and o.picking_type_id.warehouse_id">
-                        <span t-field="o.picking_type_id.warehouse_id.name"/>
-                        <div t-field="o.picking_type_id.warehouse_id.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;phone&quot;, &quot;fax&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/></div>
-                </div>
-                <div class="col-xs-5 col-xs-offset-1">
-                    <div t-field="o.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;phone&quot;, &quot;fax&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/>
-                    <p t-if="o.partner_id.vat">VAT:                                                                                                                                                 
-                        <span t-field="o.partner_id.vat"/>
-                    </p>
-                </div>
+            <br/>
+            <div class="row" style="margin-top:10px">
+                <h2>Request for Quotation</h2>
             </div>
-            <h2>Request for Quotation                                                                                                 
-                <span t-field="o.name"/>
-            </h2>
+            <div class="row">
+                <table class="table table-condensed table table-striped" style=" table-layout:fixed;">
+                    <thead style=" background-color: #3964C3;">
+                        <tr>
+                            <th width="30px" style="border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important; ">To:</th>
+                            <th width="20px" style="border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important; ">
+                                <span >RFQ # - Date</span>
+                            </th>
+                            <th width="20px" style="border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important; ">Other Information</th>
+                        </tr>
+                    </thead>
+                    <tbody class="sale_tbody">
+                        <tr>
+                            <td style="border: 1px !important; border-style: solid !important; border-color: #fff !important;">
+                                <div>
+                                    <t t-if="o.partner_id.company_type == 'person'">
+                                        <span t-field="o.partner_id.parent_id"/>
+                                    </t>
+                                    <t t-if="o.partner_id.company_type == 'company'">
+                                        <span t-field="o.partner_id.name"/>
+                                    </t>
+                                </div>
+                                <div>
+                                    <t t-if="o.partner_id.company_type == 'person'">
+                                        <span t-field="o.partner_id.parent_id" t-options='{"widget": "contact", "fields": ["address", "phone", "fax"], "no_marker": True}'/>
+                                    </t>
+                                    <t t-if="o.partner_id.company_type == 'company'">
+                                        <span t-field="o.partner_id" t-options='{"widget": "contact", "fields": ["address", "phone", "fax"], "no_marker": True}'/>
+                                    </t>
+                                </div>
+                                <t t-if="o.partner_id.company_type == 'person'">
+                                    <strong>Kind Attn:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     										                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                        <span t-field="o.partner_id.name"/>
+                                    </strong>
+                                </t>
+                                <div/>
+                                <div t-field="o.partner_id.vat"/>
+                            </td>
+                            <td style="border: 1px !important; border-style: solid !important; border-color: #fff !important;">
+                                <strong>
+                                    <span t-field="o.name"/>
+                                </strong>
+                                <br/>
+                                <span t-field="o.date_order" t-field-options='{"format": "MMMM d, yyyy"}'/>
+                            </td>
+                            <td style="border: 1px !important; border-style: solid !important; border-color: #fff !important;">
+                                <div t-if="o.requisition_id.name">
+                                    <strong>Our Reference:</strong>
+                                    <p t-field="o.requisition_id"/>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br/>
             <table class="table table-condensed">
                 <thead>
                     <tr>
-                        <th>
-                            <strong>Description</strong>
-                        </th>
-                        <th class="text-center">
-                            <strong>Expected Date</strong>
-                        </th>
-                        <th class="text-right">
-                            <strong>Qty</strong>
-                        </th>
+                        <th width="5%">Sr.No</th>
+                        <th width="55%">Description</th>
+                        <th width="20%" class="text-center">Expected Date</th>
+                        <th width="20%" class="text-right">Qty</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <t t-set="i" t-value="1" />
                     <tr t-foreach="o.order_line" t-as="order_line">
+                        <td>
+                            <span t-esc="i" />
+                            <t t-set="i" t-value="i+1"/>
+                        </td>
                         <td>
                             <span t-field="order_line.name"/>
                         </td>
                         <td class="text-center">
-                            <span t-field="order_line.date_planned"/>
+                            <span t-field="order_line.date_planned" t-field-options='{"format": "MMMM d, yyyy"}'/>
                         </td>
                         <td class="text-right">
                             <span t-field="order_line.product_qty"/>
@@ -53,6 +94,18 @@
                 </tbody>
             </table>
             <p t-field="o.notes"/>
+            <div class="row mt16 mb16" id="informations-1">
+                <div name="payment_term" t-if="o.payment_term_id" class="col-xs-6">
+                    <strong>Payment Terms:</strong>
+                    <span t-field="o.payment_term_id"/>
+                </div>
+            </div>
+            <div class="row mt16 mb16" id="informations-3">
+                <div name="incoterms" t-if="o.incoterm_id" class="col-xs-6">
+                    <strong>Incoterm:</strong>
+                    <span t-field="o.incoterm_id"/>
+                </div>
+            </div>
             <div class="oe_structure"/>
             <div>
                 <p>
