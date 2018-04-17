@@ -43,7 +43,7 @@
                                     </t>
                                 </div>
                                 <t t-if="doc.partner_id.company_type == 'person'">
-                                    <strong>Kind Attn:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     										                                        
+                                    <strong>Kind Attn:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     										                                                                                                                                                                                                                                                                                                                                
                                         <span t-field="doc.partner_id.name"/>
                                     </strong>
                                 </t>
@@ -67,7 +67,7 @@
                                     <p t-field="doc.user_id"/>
                                 </div>
                                 <div t-if="doc.opportunity_id.name">
-                                    <strong>Opp. Reference:</strong>
+                                    <strong>Our Reference:</strong>
                                     <p t-field="doc.opportunity_id"/>
                                 </div>
                             </td>
@@ -95,7 +95,7 @@
                         <t t-foreach="page" t-as="layout_category">
                             <t t-if="layout_category_size &gt; 1 or page_size &gt; 1" groups="sale.group_sale_layout">
                                 <tr class="active">
-                                    <td colspan="7" style="font-weight: bold; border-bottom: 1px solid black;">&amp;bull;									                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        										                                        
+                                    <td colspan="7" style="font-weight: bold; border-bottom: 1px solid black;">&amp;bull;									                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        										                                                                                                                                                                                                                                                                                                                                
                                         <t t-esc="layout_category['name']"/>
                                     </td>
                                 </tr>
@@ -146,17 +146,36 @@
                 </t>
             </t>
             <p t-field="doc.note"/>
-            <div class="row mt32 mb32" id="informations">
-                <div name="payment_term" t-if="doc.payment_term_id" class="col-xs-3">
+            <div class="row mt16 mb16" id="informations-1">
+                <div name="payment_term" t-if="doc.payment_term_id" class="col-xs-6">
                     <strong>Payment Terms:</strong>
-                    <p t-field="doc.payment_term_id"/>
+                    <span t-field="doc.payment_term_id"/>
                 </div>
             </div>
-            <div class="row mt32 mb32" id="informations">
-                <div name="valid_upto" t-if="doc.validity_date" class="col-xs-3">
+            <div class="row mt16 mb16" id="informations-2">
+                <div name="valid_upto" t-if="doc.validity_date" class="col-xs-6">
                     <strong>Valid Upto:</strong>
-                    <p t-field="doc.validity_date" t-field-options='{"format": "MMMM d, yyyy"}'/>
+                    <span t-field="doc.validity_date" t-field-options='{"format": "MMMM d, yyyy"}'/>
                 </div>
+            </div>
+            <div class="row mt16 mb16" id="informations-3">
+                <div name="incoterms" t-if="doc.incoterm" class="col-xs-6">
+                    <strong>Incoterm:</strong>
+                    <span t-field="doc.incoterm"/>
+                </div>
+            </div>
+            <div>
+                <h6>
+                    <em>We look forward to servicing your requirements.</em>
+                </h6>
+                <p>
+                    <strong>Name:</strong>
+                    <span t-esc="user.name"/>
+                </p>
+                <p>
+                    <strong>Desig:</strong>
+                    <span t-esc="user.partner_id.function" />
+                </p>
             </div>
             <!--
 		<p t-if="doc.payment_term_id.note"><span t-field="doc.payment_term_id.note"/></p>
