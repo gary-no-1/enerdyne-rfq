@@ -17,3 +17,4 @@ class PurchasOrderLine(models.Model):
     partner_ref_date = fields.Date('Supplier Ref Date',related='order_id.partner_ref_date')
 
     fob_usd_price = fields.Float('FOB USD Price')
+    landed_cost = fields.Float('Landed Cost')
