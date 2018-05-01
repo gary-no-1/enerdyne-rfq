@@ -125,7 +125,7 @@
                                     </td>
                                     <td class="text-right">
                                         <t t-set="lead_week" t-value="l.sale_delay/7"/>
-                                        <span t-esc="lead_week"/>
+                                        <span t-esc="'%.1f'% lead_week"/>
                                     </td>
                                 </tr>
                             </t>
@@ -165,9 +165,9 @@
                 </div>
             </div>
             <div>
-                <h6>
+                <h5>
                     <em>We look forward to servicing your requirements.</em>
-                </h6>
+                </h5>
                 <p>
                     <strong>Name:</strong>
                     <span t-esc="user.name"/>
