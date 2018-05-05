@@ -43,7 +43,7 @@
                                     </t>
                                 </div>
                                 <t t-if="doc.partner_id.company_type == 'person'">
-                                    <strong>Kind Attn:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     										                                                                                                                                                                                                                                                                                                                                
+                                    <strong>Kind Attn:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     										                                                                                                                                                                                                                                                                                                                                                                                                                                                        
                                         <span t-field="doc.partner_id.name"/>
                                     </strong>
                                 </t>
@@ -95,7 +95,7 @@
                         <t t-foreach="page" t-as="layout_category">
                             <t t-if="layout_category_size &gt; 1 or page_size &gt; 1" groups="sale.group_sale_layout">
                                 <tr class="active">
-                                    <td colspan="7" style="font-weight: bold; border-bottom: 1px solid black;">&amp;bull;									                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        										                                                                                                                                                                                                                                                                                                                                
+                                    <td colspan="7" style="font-weight: bold; border-bottom: 1px solid black;">&amp;bull;									                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        										                                                                                                                                                                                                                                                                                                                                                                                                                                                        
                                         <t t-esc="layout_category['name']"/>
                                     </td>
                                 </tr>
@@ -118,14 +118,20 @@
                                         <span t-esc="'%.2f'% l.price_unit"/>
                                     </td>
                                     <td class="text-right">
-                                        <span t-esc="'%.0f'% l.mpq"/>
+                                        <t t-if="l.mpq">
+                                            <span t-esc="'%.0f'% l.mpq"/>
+                                        </t>
                                     </td>
                                     <td class="text-right">
-                                        <span t-esc="'%.0f'% l.moq"/>
+                                        <t t-if="l.moq">
+                                            <span t-esc="'%.0f'% l.moq"/>
+                                        </t>
                                     </td>
                                     <td class="text-right">
                                         <t t-set="lead_week" t-value="l.sale_delay/7"/>
-                                        <span t-esc="'%.1f'% lead_week"/>
+                                        <t t-if="lead_week">
+                                            <span t-esc="'%.1f'% lead_week"/>
+                                        </t>
                                     </td>
                                 </tr>
                             </t>
