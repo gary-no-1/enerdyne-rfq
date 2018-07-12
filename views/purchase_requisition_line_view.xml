@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+    <!--Inherit purchase order form view-->
+        <record id="purchase_requisition_tree_extras" model="ir.ui.view">
+            <field name="name">Purchase Requistion Tree View Extras</field>
+            <field name="model">purchase.requisition</field>
+            <field name="inherit_id" ref="purchase_requisition.view_purchase_requisition_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='origin']" position="before">
+                    <field name="opportunity_id" />
+                    <field name="sale_order_id" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+
+</odoo>

@@ -11,5 +11,7 @@ class PurchasOrder(models.Model):
     _inherit = 'purchase.order'
 
     partner_ref_date = fields.Date(string="Supplier Reference Date")
+    rfq_valid_from = fields.Date(string="Valid From")
+    rfq_valid_upto = fields.Date(string="Valid Uptil")
 
 

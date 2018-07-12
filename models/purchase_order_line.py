@@ -2,6 +2,8 @@
 # © 2018 Ravi Krishnan (ravi73164@gmail.com)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+# fields added moq , mpq , purc_delay to purchase order line
+
 from odoo import fields, models, api
 from datetime import datetime, time
 
@@ -18,3 +20,10 @@ class PurchasOrderLine(models.Model):
 
     fob_usd_price = fields.Float('FOB USD Price')
     landed_cost = fields.Float('Landed Cost')
+
+    moq = fields.Float('M.O.Q')
+    mpq = fields.Float('M.P.Q')
+    purc_delay = fields.Float('Purc. Lead Time',)
+    remarks = fields.Char('Remarks')
+
+
