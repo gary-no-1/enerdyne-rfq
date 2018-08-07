@@ -1,7 +1,9 @@
 Purchase Requisition Item Rates Report
 ==============
 
-Last updated : 12-Jul-2018
+Last updated :
+07-Aug-2018 - split product name into make , part # etc 
+12-Jul-2018 - 
 
 This module is for reporting on purchase rfq item rates
 

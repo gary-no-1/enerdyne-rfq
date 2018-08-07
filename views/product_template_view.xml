@@ -14,18 +14,17 @@
                         <field name="moq" />
                     </group>
                 </group>
-                <page string="Notes" position="after">
-                    <page string="Name Details">
-                        <group>
-                            <field name="product_part_no" />
-                            <field name="product_make" />
-                        </group>
-                        <group>
-                            <field name="product_type" />
-                            <field name="product_details" />
-                        </group>
-                    </page>
-                </page>
+                <xpath expr="//group[@name='group_general']" position="before">
+                    <group>
+                        <field name="product_part_no" />
+                        <field name="product_make" />
+                    </group>
+                    <group>
+                        <field name="product_type" />
+                        <field name="product_details" />
+                    </group>
+                </xpath>
+
             </field>
         </record>
     </data>
