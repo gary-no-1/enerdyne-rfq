@@ -26,4 +26,6 @@ class PurchasOrderLine(models.Model):
     purc_delay = fields.Float('Purc. Lead Time',)
     remarks = fields.Char('Remarks')
 
+    currency_id = fields.Integer('Currency', related="order_id.currency_id")
+
 
