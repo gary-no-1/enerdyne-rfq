@@ -11,4 +11,8 @@ class ProductTemplate(models.Model):
 
     moq = fields.Float('Minimum Order Quantity')
     mpq = fields.Float('Minimum Packing Quantity')
+    product_part_no = fields.Char('Part #')
+    product_make = fields.Char('Make')
+    product_type = fields.Char('Product Type')
+    product_details = fields.Char('Product Details')
 

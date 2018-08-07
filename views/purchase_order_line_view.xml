@@ -7,8 +7,8 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="partner_id" string="Supplier"/>
-                <field name="order_no"/>
-                <field name="tender"/>
+                <field name="order_no" string="RFQ #"/>
+                <field name="tender" string="Purc. Enquiry"/>
                 <field name="partner_ref"/>
                 <field name="partner_ref_date"/>
                 <field name="product_id"/>

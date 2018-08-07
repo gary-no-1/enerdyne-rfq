@@ -2,7 +2,7 @@
 <odoo>
 
     <data>
-    <!--Inherit product template form view-->
+        <!--Inherit product template form view-->
         <record id="product_template_extras_form" model="ir.ui.view">
             <field name="name">Product Template Extras Form</field>
             <field name="model">product.template</field>
@@ -12,8 +12,20 @@
                     <group>
                         <field name="mpq" />
                         <field name="moq" />
-                     </group>
-                 </group>
+                    </group>
+                </group>
+                <page string="Notes" position="after">
+                    <page string="Name Details">
+                        <group>
+                            <field name="product_part_no" />
+                            <field name="product_make" />
+                        </group>
+                        <group>
+                            <field name="product_type" />
+                            <field name="product_details" />
+                        </group>
+                    </page>
+                </page>
             </field>
         </record>
     </data>

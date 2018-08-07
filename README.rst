@@ -1,6 +1,8 @@
 Purchase Requisition Item Rates Report
 ==============
 
+Last updated : 12-Jul-2018
+
 This module is for reporting on purchase rfq item rates
 
 Depends
