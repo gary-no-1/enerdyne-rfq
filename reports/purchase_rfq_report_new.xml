@@ -110,11 +110,11 @@
             <div>
                 <p>
                     <strong>Name:</strong>
-                    <span t-esc="doc.create_uid.name"/>
+                    <span t-esc="o.create_uid.name"/>
                 </p>
                 <p>
                     <strong>Desig:</strong>
-                    <span t-esc="doc.create_uid.partner_id.function" />
+                    <span t-esc="o.create_uid.partner_id.function" />
                 </p>
             </div>
         </div>
