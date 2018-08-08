@@ -2,6 +2,8 @@ Purchase Requisition Item Rates Report
 ==============
 
 Last updated :
+08-Aug-2018 - quotes have create_uid name and designation
+07-Aug-2018 - pivot table digits - unable to do
 07-Aug-2018 - pivot table digits , currency in purchase order line
 07-Aug-2018 - split product name into make , part # etc 
 12-Jul-2018 - 

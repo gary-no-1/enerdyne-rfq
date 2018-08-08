@@ -176,11 +176,11 @@
                 </h5>
                 <p>
                     <strong>Name:</strong>
-                    <span t-esc="user.name"/>
+                    <span t-esc="doc.create_uid.name"/>
                 </p>
                 <p>
                     <strong>Desig:</strong>
-                    <span t-esc="user.partner_id.function" />
+                    <span t-esc="doc.create_uid.partner_id.function" />
                 </p>
             </div>
             <!--
