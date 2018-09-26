@@ -19,3 +19,4 @@ class SaleOrderLine(models.Model):
     dlvy_date = fields.Date('Dlvy Date')
     dlvy_week = fields.Char('Dlvy Week')
 
+
