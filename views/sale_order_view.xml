@@ -12,6 +12,14 @@
                     <field name="moq"/>
                     <field name="mpq"/>
                     <field name="sale_delay"/>
+                    <field name="dlvy_date" attrs="{'readonly': [('state','in',['draft','revised'])]}" />
+                    <field name="dlvy_week" readonly="1" />
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree//field[@name='qty_delivered']" position="replace">
+                    <field name="qty_delivered" invisible="1"/>
+                </xpath>                
+                <xpath expr="//field[@name='order_line']/tree//field[@name='qty_invoiced']" position="replace">
+                    <field name="qty_invoiced" invisible="1"/>
                 </xpath>                
                 <xpath expr="//field[@name='order_line']/tree//field[@name='tax_id']" position="replace">
                     <field name="tax_id" invisible="1"/>
